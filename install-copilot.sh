@@ -2,7 +2,7 @@
 
 # Extract VS Code version from code-server
 get_vscode_version() {
-    code-server --version | head -n1
+    code-server --version | head -n1 | rev | cut -d" " -f1 | rev
 }
 
 # Get user-data-dir from running code-server process
